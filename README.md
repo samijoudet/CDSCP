@@ -24,10 +24,10 @@ Possibilité d'utiliser les données des capteur de présence pour annalyser l'u
 TODO
 
 # Type d’environnement
-TODO
+Abribus connecté 
 
 # Domaine 
-TODO
+Confort, Service
 
 # Motivation
 TODO
