@@ -1,8 +1,8 @@
 # CSCP
-Projet de CSCP : Sami Joudet, Yasmine Bouakroucha, Moenes Zribi, Robin Georg
+Projet de CSCP : Sami Joudet, Yasmine Bouakroucha, Moenes Zribi, Robin Georgi
 
 # Idee
-- Abribus avec une gestion de la lumière la nuit et des caméra de surveillance
+- Abribus avec une gestion de la lumière la nuit et des caméras de surveillance
 
 Modivation de l'idée : 
 
@@ -14,11 +14,11 @@ La motivation est d'assurer la sécurité des usagers de transport en commun de 
 
 Innovation: 
 
-led qui éclaire l'usager la nuit et qui affiche une couleur spécifique à l'approche d'un bus
+LED qui éclaire l'usager la nuit et qui affiche une couleur spécifique à l'approche d'un bus
 
-Bouton d'urgence pour appeler les secours, caméra connecter et détecteur de mouvement pour alumer l'abribus la nuit. 
+Bouton d'urgence pour appeler les secours, caméra connectée et détecteur de mouvement pour alumer l'abribus la nuit. 
 
-Possibilité d'utiliser les donner des capteur de présence pour annalyser l'utilisation de l'abribus pour adapter les horraire en fonction des besoin des usagers.
+Possibilité d'utiliser les données des capteur de présence pour annalyser l'utilisation de l'abribus pour adapter les horaires en fonction des besoins des usagers.
 
 # Titre temporaire du service ambiant
 TODO
