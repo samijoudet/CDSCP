@@ -33,7 +33,11 @@ Confort, Service
 ## Attente sociétale
 L'attente sociétale est très importante pour les milieux urbains qui regrouperont 70% de la population française d'ici 2050.
 
-Sources : [Récapitulatif des attentes des voyageurs de la RATP](https://www.ratpdev.com/sites/default/files/annexes/communiques/TRACER%20LA%20VOIE_Nouvelles%20attentes%20voyageurs_web.pdfhttps://www.ratpdev.com/sites/default/files/annexes/communiques/TRACER%20LA%20VOIE_Nouvelles%20attentes%20voyageurs_web.pdf)
+L'un des points clés de l'attente sociétale est la simplicité du déplacement en transports en commun. En effet, les usagers attendent des transports en commun qu'ils soient simples d'utilisation et qu'ils permettent de se déplacer rapidement et facilement. Les usagers souhaitent un accès à des informations personnalisées en temps réel sur leurs transports en commun et les éventuelles perturbations auxquelles ils devront faire face.
+
+Le but final est de permettre aux usagers d'avoir confiance en leurs transports en commun et d'être sûr d'arriver à bon port à l'heure ou de bénéficier facilement de trajets alternatifs en cas de difficulté.
+
+Sources : [Récapitulatif des attentes des voyageurs de la RATP](https://www.ratpdev.com/sites/default/files/annexes/communiques/TRACER%20LA%20VOIE_Nouvelles%20attentes%20voyageurs_web.pdf), [Les attentes des usagers de transports transdev](https://www.transdev.com/fr/modes-de-transport/les-attentes-des-usagers-des-transports/)
 
 # Analyse de l'existant / State of the art
 TODO
