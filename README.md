@@ -30,7 +30,10 @@ Abribus connecté
 Confort, Service
 
 # Motivation
-TODO
+## Attente sociétale
+L'attente sociétale est très importante pour les milieux urbains qui regrouperont 70% de la population française d'ici 2050.
+
+Sources : [Récapitulatif des attentes des voyageurs de la RATP](https://www.ratpdev.com/sites/default/files/annexes/communiques/TRACER%20LA%20VOIE_Nouvelles%20attentes%20voyageurs_web.pdfhttps://www.ratpdev.com/sites/default/files/annexes/communiques/TRACER%20LA%20VOIE_Nouvelles%20attentes%20voyageurs_web.pdf)
 
 # Analyse de l'existant / State of the art
 TODO
