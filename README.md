@@ -58,6 +58,6 @@ Capteurs :
 RFID
 
 Actionneurs :
-LED
-Afficheurs LCD (ou écran)
+LED,
+Afficheurs LCD (ou écran),
 Buzzer
