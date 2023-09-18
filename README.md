@@ -5,7 +5,7 @@ Projet de CSCP : Sami Joudet, Yasmine Bouakroucha, Moenes Zribi, Robin Georgi
 - Abribus avec une gestion de la lumière la nuit et des caméras de surveillance
 
 # Titre temporaire du service ambiant
-TODO
+Connectibus
 
 # Type d’environnement
 Abribus connecté 
