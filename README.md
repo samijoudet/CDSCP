@@ -2,7 +2,8 @@
 Projet de CSCP : Sami Joudet, Yasmine Bouakroucha, Moenes Zribi, Robin Georgi
 
 # Idee
-- Abribus avec une gestion de la lumière la nuit et des caméras de surveillance
+
+Abribus qui apporte des informations sur les bus à venir avec leur capacité et des leds qui annonce l'arrivé proche d'un bus.
 
 # Titre temporaire du service ambiant
 Connectibus
@@ -14,6 +15,11 @@ Abribus connecté
 Confort, Service
 
 # Motivation
+## Legislation
+L'organisation des transports est responsable de la gestion des abribus. Elle a pour mission de les entretenir et d'assurer leur confort.
+Je cite " Il relève ainsi que prendre en charge un service public de transport signifie notamment assurer " la réalisation et la gestion d'infrastructures et d'équipements affectés au transport et leur mise à la disposition des usagers dans des conditions normales d'entretien, de fonctionnement et de sécurité ", dont les abribus."
+Sources : [Récapitulatif des loi sur les abripus par la SVP](https://www.svp.com/actualite/abribus-quelle-competence-d-attache-20110629)
+
 ## Attente sociétale
 L'attente sociétale est très importante pour les milieux urbains qui regrouperont 70% de la population française d'ici 2050.
 
