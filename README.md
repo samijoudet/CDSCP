@@ -51,7 +51,8 @@ source : https://www.arpon-technologies.com/secteurs/ing%C3%A9nierie-infrastruct
 
 
 # Innovation et/ou progrès scientifique
-TODO
+
+L'innovation et le progrès scientifique de cette idée résident dans l'utilisation de capteurs RFID pour améliorer l'efficacité du transport en commun. En intégrant cette technologie, il devient possible de limiter le temps d'attente des utilisateurs de bus en fournissant des informations en temps réel sur le nombre de places disponibles dans le bus qu'ils souhaitent emprunter. Cette approche révolutionnaire permet une meilleure organisation des déplacements en optimisant l'utilisation des ressources de transport public, ce qui contribue à réduire les congestions, à améliorer l'expérience des passagers et à réduire les émissions de gaz à effet de serre. Cette innovation s'inscrit dans le cadre d'une avancée significative dans la gestion intelligente des transports en utilisant des technologies de pointe pour améliorer la mobilité urbaine et la qualité de vie des citoyens.
 
 # Quelques élement techniques
 Capteurs :
