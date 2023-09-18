@@ -54,4 +54,9 @@ source : https://www.arpon-technologies.com/secteurs/ing%C3%A9nierie-infrastruct
 TODO
 
 # Quelques élement techniques
-TODO
+Capteurs :
+RFID
+Actionneurs :
+LED
+Afficheurs LCD (ou écran)
+Buzzer
