@@ -18,7 +18,7 @@ Confort, Service
 ## Legislation
 L'organisation des transports est responsable de la gestion des abribus. Elle a pour mission de les entretenir et d'assurer leur confort.
 Je cite " Il relève ainsi que prendre en charge un service public de transport signifie notamment assurer " la réalisation et la gestion d'infrastructures et d'équipements affectés au transport et leur mise à la disposition des usagers dans des conditions normales d'entretien, de fonctionnement et de sécurité ", dont les abribus."
-Sources : [Récapitulatif des loi sur les abripus par la SVP](https://www.svp.com/actualite/abribus-quelle-competence-d-attache-20110629)
+Sources : [Récapitulatif des lois sur les abribus par la SVP](https://www.svp.com/actualite/abribus-quelle-competence-d-attache-20110629)
 
 ## Attente sociétale
 L'attente sociétale est très importante pour les milieux urbains qui regrouperont 70% de la population française d'ici 2050.
