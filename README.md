@@ -6,10 +6,10 @@ Projet de CSCP : Sami Joudet, Yasmine Bouakroucha, Moenes Zribi, Robin Georgi
 Abribus qui apporte des informations sur les bus à venir avec leur capacité et des leds qui annonce l'arrivé proche d'un bus.
 
 # Titre temporaire du service ambiant
-Connectibus
+Abribus connecté
 
 # Type d’environnement
-Abribus connecté 
+Abribus
 
 # Domaine 
 Confort, Service
