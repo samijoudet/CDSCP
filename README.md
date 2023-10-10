@@ -86,7 +86,7 @@ Il existe également de nombreux capteurs de pollution sur le marché. Ces capte
 
 ## Innovation et/ou progrès scientifique
 
-L'innovation et le progrès scientifique de cette idée résident dans l'utilisation de capteurs de présence et de détection d'ouverture de denâtres pour effectuer des économies d'énergies en ne sollicitant pas en permanence le purificateur d'air. **En intégrant cette technologie, il devient possible de limiter le temps d'attente des utilisateurs de bus en fournissant des informations en temps réel sur le nombre de places disponibles dans le bus qu'ils souhaitent emprunter. Cette approche révolutionnaire permet une meilleure organisation des déplacements en optimisant l'utilisation des ressources de transport public, ce qui contribue à réduire les congestions, à améliorer l'expérience des passagers et à réduire les émissions de gaz à effet de serre. Cette innovation s'inscrit dans le cadre d'une avancée significative dans la gestion intelligente des transports en utilisant des technologies de pointe pour améliorer la mobilité urbaine et la qualité de vie des citoyens.**
+L'innovation et le progrès scientifique de cette idée résident dans l'utilisation de capteurs de présence et de détection d'ouverture de denâtres pour effectuer des économies d'énergies en ne sollicitant pas en permanence le purificateur d'air. En intégrant cette technologie, il devient possible de limiter la pollution de l'air au sein des domiciles des utilisateurs en fournissant des informations en temps réel sur qualité de l'air et en activant les actionneurs capable de réguler ces conditions aériennes. Cette approche permet une meilleure gestion de la qualité de l'air en optimisant l'utilisation actionneurs uniquement aux moments nécessaires, ce qui contribue à réduire les risques de problèmes respiratoires, à améliorer le confort des utilisateurs tout en utilisant ces technologies de manière écoresponsables.
 
 # Quelques élement techniques
 
@@ -99,5 +99,4 @@ Capteurs :
 Actionneurs :
 
 - Purificateur d'air
-- humidificateur
-- déshumidificateur
+- humidificateur / déshumidificateur
