@@ -1,4 +1,4 @@
-package fr.unice.polytech.cdscp.ui.home
+package fr.unice.polytech.cdscp_android.ui.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

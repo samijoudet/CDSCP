@@ -13,5 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "CDSCP"
+rootProject.name = "CDSCP-Android"
 include(":app")
+ 

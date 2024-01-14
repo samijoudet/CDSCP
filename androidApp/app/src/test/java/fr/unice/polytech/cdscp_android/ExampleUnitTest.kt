@@ -1,4 +1,4 @@
-package fr.unice.polytech.cdscp
+package fr.unice.polytech.cdscp_android
 
 import org.junit.Test
 
