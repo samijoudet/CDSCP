@@ -44,6 +44,27 @@ class HomeFragment : Fragment() {
         })
     }
 
+    private fun getCo2(textView:TextView) {
+        val retrofit = ApiClient.apiClient
+        val apiService = retrofit.create(ApiService::class.java)
+
+        val call = apiService.getCo2()
+        call.enqueue(object : Callback<String> {
+            override fun onResponse(call: Call<String>, response: Response<String>) {
+                if (response.isSuccessful) {
+                    val result = response.body()
+                    println(result)
+                    textView.text = result
+                }
+            }
+
+            override fun onFailure(call: Call<String>, t: Throwable) {
+                textView.text = "Error: ${t.message}"
+
+            }
+        })
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -55,11 +76,18 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textHome
+        val textView: TextView = binding.textHelloWorld
         val button: TextView = binding.button
         button.setOnClickListener {
             getDataFromApi(textView)
         }
+
+        val co2TextView: TextView = binding.co2TextView
+        val co2Button: TextView = binding.co2Button
+        co2Button.setOnClickListener {
+            getCo2(co2TextView)
+        }
+
         homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
