@@ -7,6 +7,8 @@ import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,6 +34,9 @@ class HomeFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+
+    private lateinit var handler: Handler
+    private lateinit var runnable: Runnable
 
     private val CHANNEL_ID = "CO2HighNotification"
     private val notificationId = 1
@@ -167,7 +172,26 @@ class HomeFragment : Fragment() {
         homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
+
+        handler = Handler(Looper.getMainLooper())
+        runnable = object : Runnable {
+            override fun run() {
+                getCo2(co2TextView)
+                handler.postDelayed(this, 300000)
+            }
+        }
+
         return root
+    }
+
+    override fun onResume() {
+        super.onResume()
+        handler.post(runnable)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        handler.removeCallbacks(runnable)
     }
 
 
