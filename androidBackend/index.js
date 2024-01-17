@@ -13,8 +13,8 @@ const host = "http://localhost:1880";
 app.use(bodyParser.json());
 app.use(cors());
 
-async function getCO2FromNodeRed() {
-    let result = await axios.get(host + "/getCO2");
+async function getFromNodeRed(path) {
+    let result = await axios.get(host + path);
     return result.data;
 }
 
@@ -23,8 +23,12 @@ app.get("/helloWorld", (req, res) => {
 });
 
 app.get("/getCO2", async (req, res) => {
-    let result = await getCO2FromNodeRed();
-    console.log(result);
+    let result = await getFromNodeRed("/getCO2");
+    res.send(result);
+});
+
+app.get("/getOpenState", async (req, res) => {
+    let result = await getFromNodeRed("/getOpenState");
     res.send(result);
 });
 

@@ -36,7 +36,9 @@
         android:id="@+id/co2_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="🔁"
+        app:icon="@android:drawable/ic_popup_sync"
+        app:iconGravity="textStart"
+        app:iconPadding="0dp"
         app:layout_constraintEnd_toEndOf="@+id/co2_text_view"
         app:layout_constraintTop_toTopOf="@+id/co2_text_view" />
 
@@ -55,8 +57,8 @@
         android:layout_height="200dp"
         android:layout_marginTop="32dp"
         android:background="#DFE2E1"
-        android:text="--"
         android:gravity="center"
+        android:text="--"
         android:textSize="40sp"
         app:layout_constraintEnd_toStartOf="@+id/textView4"
         app:layout_constraintStart_toStartOf="parent"

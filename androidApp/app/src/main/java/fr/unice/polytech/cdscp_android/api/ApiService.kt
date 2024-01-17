@@ -9,4 +9,7 @@ interface ApiService {
 
     @GET("getCo2")
     fun getCo2(): Call<String>
+
+    @GET("getOpenState")
+    fun getOpenState(): Call<String>
 }
