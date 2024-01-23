@@ -1,0 +1,132 @@
+[
+    {
+        "id": "5cf17edeb7241811",
+        "type": "http in",
+        "z": "65c5c640a9bfcc5f",
+        "name": "getCO2",
+        "url": "/getCO2",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 130,
+        "y": 1000,
+        "wires": [
+            [
+                "a01ea87cbf717b47"
+            ]
+        ]
+    },
+    {
+        "id": "57e510f1f60e064c",
+        "type": "http response",
+        "z": "65c5c640a9bfcc5f",
+        "name": "responseCO2",
+        "statusCode": "",
+        "headers": {},
+        "x": 520,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "a01ea87cbf717b47",
+        "type": "function",
+        "z": "65c5c640a9bfcc5f",
+        "name": "return CO2",
+        "func": "msg.payload =  flow.get(\"co2Level\");\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 1000,
+        "wires": [
+            [
+                "57e510f1f60e064c",
+                "4fd19b8b242cfe65"
+            ]
+        ]
+    },
+    {
+        "id": "4fd19b8b242cfe65",
+        "type": "debug",
+        "z": "65c5c640a9bfcc5f",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 470,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "e0b3749300e35c92",
+        "type": "http in",
+        "z": "65c5c640a9bfcc5f",
+        "name": "getOpenState",
+        "url": "/getOpenState",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 170,
+        "y": 1240,
+        "wires": [
+            [
+                "fbb3c4c328d481a5"
+            ]
+        ]
+    },
+    {
+        "id": "20b47d73b3e678f2",
+        "type": "http response",
+        "z": "65c5c640a9bfcc5f",
+        "name": "responseOpenState",
+        "statusCode": "",
+        "headers": {},
+        "x": 700,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "fbb3c4c328d481a5",
+        "type": "function",
+        "z": "65c5c640a9bfcc5f",
+        "name": "return window openState",
+        "func": "msg.payload = flow.get(\"openState\");\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 1240,
+        "wires": [
+            [
+                "20b47d73b3e678f2",
+                "d0a0357dd672b5df"
+            ]
+        ]
+    },
+    {
+        "id": "d0a0357dd672b5df",
+        "type": "debug",
+        "z": "65c5c640a9bfcc5f",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 1340,
+        "wires": []
+    }
+]
