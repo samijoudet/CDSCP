@@ -1,5 +1,459 @@
 [
     {
+        "id": "65c5c640a9bfcc5f",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "6bc382b534fdf74e",
+        "type": "http request",
+        "z": "65c5c640a9bfcc5f",
+        "name": "Requête ambee pollen",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.ambeedata.com/latest/pollen/by-lat-lng?lat=43.615557652935706&lng=7.071861733131095",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "other",
+                "keyValue": "x-api-key",
+                "valueType": "other",
+                "valueValue": "b7da33e45779f6cc4318099cc32512e5fdeb8e951318970e4a4343beae06e7a4"
+            }
+        ],
+        "x": 480,
+        "y": 640,
+        "wires": [
+            [
+                "f8d12617c6f66c53"
+            ]
+        ]
+    },
+    {
+        "id": "e8baf260a2c3967e",
+        "type": "debug",
+        "z": "65c5c640a9bfcc5f",
+        "name": "debug 2",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1340,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "39d4f993bd99620b",
+        "type": "inject",
+        "z": "65c5c640a9bfcc5f",
+        "name": "Repeat 15 min",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "900",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
+        "y": 640,
+        "wires": [
+            [
+                "6bc382b534fdf74e"
+            ]
+        ]
+    },
+    {
+        "id": "4f6de447cffef3f0",
+        "type": "function",
+        "z": "65c5c640a9bfcc5f",
+        "name": "function 1",
+        "func": "msg.payload = JSON.parse(flow.get(\"pollenLevel\")).data[0].Risk\nlet isPollenMediumOrHigh = (msg.payload.grass_pollen == \"Medium\" || msg.payload.tree_pollen == \"Medium\" || msg.payload.weed_pollen == \"Medium\" || msg.payload.grass_pollen == \"High\" || msg.payload.tree_pollen == \"High\" || msg.payload.weed_pollen == \"High\");\nif (isPollenMediumOrHigh && flow.get(\"openState\") == \"OPEN\") {\n    msg.payload =  \"ALERT\"\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 940,
+        "y": 520,
+        "wires": [
+            [
+                "ce05997f3884081e"
+            ]
+        ]
+    },
+    {
+        "id": "5f5de4aa4a1acbc0",
+        "type": "inject",
+        "z": "65c5c640a9bfcc5f",
+        "name": "Mock alerte",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"message\":\"success\",\"lat\":12,\"lng\":77,\"data\":[{\"timezone\":\"Asia/Kolkata\",\"Risk\":{\"grass_pollen\":\"High\",\"tree_pollen\":\"Low\",\"weed_pollen\":\"Low\"},\"Count\":{\"grass_pollen\":0,\"tree_pollen\":34,\"weed_pollen\":0},\"updatedAt\":\"2023-12-18T18:00:00.000Z\"}]}",
+        "payloadType": "str",
+        "x": 530,
+        "y": 400,
+        "wires": [
+            [
+                "f8d12617c6f66c53"
+            ]
+        ]
+    },
+    {
+        "id": "ce05997f3884081e",
+        "type": "switch",
+        "z": "65c5c640a9bfcc5f",
+        "name": "Check alerte pollen",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "ALERT",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1130,
+        "y": 520,
+        "wires": [
+            [],
+            [
+                "e8baf260a2c3967e"
+            ]
+        ]
+    },
+    {
+        "id": "366d23d5cc63f17a",
+        "type": "simplepush",
+        "z": "65c5c640a9bfcc5f",
+        "key": "dunPyx",
+        "title": "Alerte Pollen",
+        "message": "Attention vos le taux de pollen extérieur est en hausse, pensez à fermer vos fenêtres !",
+        "attachments": "",
+        "event": "",
+        "actions": "",
+        "actionTimeout": 180,
+        "password": "",
+        "salt": "",
+        "name": "Notification smartphone pollen",
+        "outputs": 1,
+        "x": 1410,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f2d1f1a3e99c993c",
+        "type": "inject",
+        "z": "65c5c640a9bfcc5f",
+        "name": "Mock no pollen",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"message\":\"success\",\"lat\":12,\"lng\":77,\"data\":[{\"timezone\":\"Asia/Kolkata\",\"Risk\":{\"grass_pollen\":\"Low\",\"tree_pollen\":\"Low\",\"weed_pollen\":\"Low\"},\"Count\":{\"grass_pollen\":0,\"tree_pollen\":34,\"weed_pollen\":0},\"updatedAt\":\"2023-12-18T18:00:00.000Z\"}]}",
+        "payloadType": "str",
+        "x": 480,
+        "y": 500,
+        "wires": [
+            [
+                "f8d12617c6f66c53"
+            ]
+        ]
+    },
+    {
+        "id": "dd76e64340d87f2e",
+        "type": "openhab2-in2",
+        "z": "65c5c640a9bfcc5f",
+        "name": "",
+        "controller": "88a29bda2d2cced0",
+        "itemname": "MultiSensorDoor07_Sensor_Door",
+        "topic": "",
+        "initialstate": true,
+        "whenupdated": true,
+        "whencommand": false,
+        "whenchanged": true,
+        "changedfrom": "",
+        "changedto": "",
+        "x": 630,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "260a114782e2c904",
+        "type": "change",
+        "z": "65c5c640a9bfcc5f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "openState",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 940,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "88f4fba048c6eff4",
+        "type": "openhab2-in2",
+        "z": "65c5c640a9bfcc5f",
+        "name": "",
+        "controller": "88a29bda2d2cced0",
+        "itemname": "MultiSensorDoor08_Sensor_Door",
+        "topic": "",
+        "initialstate": true,
+        "whenupdated": true,
+        "whencommand": false,
+        "whenchanged": true,
+        "changedfrom": "",
+        "changedto": "",
+        "x": 630,
+        "y": 220,
+        "wires": [
+            [
+                "260a114782e2c904"
+            ]
+        ]
+    },
+    {
+        "id": "de5a00b7093226f9",
+        "type": "openhab2-in2",
+        "z": "65c5c640a9bfcc5f",
+        "name": "",
+        "controller": "88a29bda2d2cced0",
+        "itemname": "IndoorNetatmo02_Co2",
+        "topic": "",
+        "initialstate": true,
+        "whenupdated": true,
+        "whencommand": false,
+        "whenchanged": true,
+        "changedfrom": "",
+        "changedto": "",
+        "x": 440,
+        "y": 840,
+        "wires": [
+            [
+                "f6b2811529511b32"
+            ]
+        ]
+    },
+    {
+        "id": "f8d12617c6f66c53",
+        "type": "change",
+        "z": "65c5c640a9bfcc5f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "pollenLevel",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 720,
+        "y": 540,
+        "wires": [
+            [
+                "4f6de447cffef3f0"
+            ]
+        ]
+    },
+    {
+        "id": "f6b2811529511b32",
+        "type": "change",
+        "z": "65c5c640a9bfcc5f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "co2Level",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 720,
+        "y": 840,
+        "wires": [
+            [
+                "84cbf058267b58da"
+            ]
+        ]
+    },
+    {
+        "id": "84cbf058267b58da",
+        "type": "function",
+        "z": "65c5c640a9bfcc5f",
+        "name": "function 2",
+        "func": "msg.payload = parseInt(flow.get(\"co2Level\").split(\" ppm\")[0]);\nlet isPollenMediumOrHigh = (msg.payload>=800);\nif (isPollenMediumOrHigh && flow.get(\"openState\") == \"CLOSED\") {\n    msg.payload =  \"ALERT\"\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 960,
+        "y": 840,
+        "wires": [
+            [
+                "81d4dab2aad1dce0"
+            ]
+        ]
+    },
+    {
+        "id": "81d4dab2aad1dce0",
+        "type": "switch",
+        "z": "65c5c640a9bfcc5f",
+        "name": "Check alerte pollen",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "ALERT",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1210,
+        "y": 840,
+        "wires": [
+            [],
+            [
+                "8b3132d718907abc"
+            ]
+        ]
+    },
+    {
+        "id": "965ec33b87ece642",
+        "type": "simplepush",
+        "z": "65c5c640a9bfcc5f",
+        "key": "dunPyx",
+        "title": "Alerte Pollen",
+        "message": "Attention vos le taux de CO2 intérieur est en hausse, pensez à ouvrir vos fenêtres !",
+        "attachments": "",
+        "event": "",
+        "actions": "",
+        "actionTimeout": 180,
+        "password": "",
+        "salt": "",
+        "name": "Notification smartphone pollen",
+        "outputs": 1,
+        "x": 1550,
+        "y": 780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e6fb1f6907336098",
+        "type": "inject",
+        "z": "65c5c640a9bfcc5f",
+        "name": "Mock CO2",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1000 ppm",
+        "payloadType": "str",
+        "x": 420,
+        "y": 760,
+        "wires": [
+            [
+                "f6b2811529511b32"
+            ]
+        ]
+    },
+    {
+        "id": "8b3132d718907abc",
+        "type": "debug",
+        "z": "65c5c640a9bfcc5f",
+        "name": "debug 3",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1480,
+        "y": 920,
+        "wires": []
+    },
+    {
         "id": "5cf17edeb7241811",
         "type": "http in",
         "z": "65c5c640a9bfcc5f",
@@ -128,5 +582,18 @@
         "x": 660,
         "y": 1340,
         "wires": []
+    },
+    {
+        "id": "88a29bda2d2cced0",
+        "type": "openhab2-controller2",
+        "name": "OpenHab",
+        "protocol": "http",
+        "host": "openhab.ubiquarium.fr",
+        "port": "80",
+        "path": "",
+        "username": "",
+        "password": "",
+        "ohversion": "v3",
+        "token": "oh.dummyiot.6vBgcdLf3QqdVRnWmy3r4RjMdjp17tLZC06EskSpDH1oAQ9sQLXQCxI2uuBaFQRkmzB1tsSfIFH9p7C3GjsQ"
     }
 ]
