@@ -121,8 +121,6 @@ class HomeFragment : Fragment() {
                                     Manifest.permission.POST_NOTIFICATIONS
                                 ) != PackageManager.PERMISSION_GRANTED
                             ) {
-                                // TODO: Consider calling
-                                //    ActivityCompat#requestPermissions
                                 ActivityCompat.requestPermissions(
                                     requireActivity(),
                                     arrayOf(Manifest.permission.POST_NOTIFICATIONS),
@@ -162,7 +160,7 @@ class HomeFragment : Fragment() {
         button.setOnClickListener {
             getDataFromApi(textView)
         }
-
+        val dataDisplaySingleValueFragment = supportFragmentManager.findFragmentById(R.id.dataDisplaySingleValueFragment) as DataDisplaySingleValueFragment
         val co2TextView: TextView = binding.co2TextView
         val co2Button: TextView = binding.co2Button
         co2Button.setOnClickListener {
