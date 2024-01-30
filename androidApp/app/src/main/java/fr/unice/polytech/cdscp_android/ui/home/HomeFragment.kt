@@ -33,8 +33,6 @@ class HomeFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
-    //private lateinit var handler: Handler
-    private lateinit var runnable: Runnable
 
     private val CHANNEL_ID = "CO2HighNotification"
     private val notificationId = 1
@@ -150,18 +148,19 @@ class HomeFragment : Fragment() {
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
         createNotificationChannel()
 
         val co2DataDisplaySingleValueFragment = childFragmentManager.findFragmentById(R.id.co2DataDisplaySingleValueFragment) as DataDisplaySingleValueFragment
         co2DataDisplaySingleValueFragment.setData("CO2 Level", "-- ppm", View.OnClickListener {
             getCo2(co2DataDisplaySingleValueFragment.getTextView())
         })
+        getCo2(co2DataDisplaySingleValueFragment.getTextView())
 
         val pollenDataDisplaySingleValueFragment = childFragmentManager.findFragmentById(R.id.pollenDataDisplaySingleValueFragment) as DataDisplaySingleValueFragment
         pollenDataDisplaySingleValueFragment.setData("Pollen Level", "--", View.OnClickListener {
             getPollen(pollenDataDisplaySingleValueFragment.getTextView())
         })
+        getPollen(pollenDataDisplaySingleValueFragment.getTextView())
 
         //handler = Handler(Looper.getMainLooper())
 

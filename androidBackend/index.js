@@ -36,6 +36,12 @@ app.get("/getOpenState", async (req, res) => {
     res.send(result);
 });
 
+app.get("/WallPlug12_Switch", async (req, res) => {
+    let status = req.query.status;
+    let result = await getFromNodeRed("/WallPlug12_Switch?status=" + status);
+    console.log(result);
+});
+
 app.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}`);
 });

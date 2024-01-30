@@ -1,0 +1,3443 @@
+[
+    {
+        "id": "85dbb29dd8da35ac",
+        "type": "tab",
+        "label": "Flux 1",
+        "disabled": true,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "01cf86edd6e478b0",
+        "type": "tab",
+        "label": "OpenHab",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "8c0a870be71dee97",
+        "type": "tab",
+        "label": "Commande",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "d182c61009b1a41f",
+        "type": "tab",
+        "label": "Notification",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "a42c20f09300ab12",
+        "type": "tab",
+        "label": "BD",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "6446dc955a436af4",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": "8086",
+        "protocol": "http",
+        "database": "database",
+        "name": "influx_Sami",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "2.0",
+        "url": "http://localhost:8086",
+        "rejectUnauthorized": true
+    },
+    {
+        "id": "c1d556e114092e17",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "f4abe8878e89cd9b",
+        "type": "ui_tab",
+        "name": "Tab 1",
+        "icon": "dashboard",
+        "order": 1
+    },
+    {
+        "id": "1226fc7da257d008",
+        "type": "ui_group",
+        "name": "Group 1",
+        "tab": "f4abe8878e89cd9b",
+        "order": 1,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "0c3468b7234f44b3",
+        "type": "mqtt-broker",
+        "name": "Local",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "97bbfc62302aaa61",
+        "type": "ui_tab",
+        "name": "Esp32 Controler",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "640cff7e3b470b03",
+        "type": "ui_group",
+        "name": "Temp",
+        "tab": "97bbfc62302aaa61",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "6dcf8bf6b8dabe4d",
+        "type": "ui_group",
+        "name": "Lux",
+        "tab": "97bbfc62302aaa61",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "8cab04a836d44fea",
+        "type": "ui_group",
+        "name": "Global Variable",
+        "tab": "97bbfc62302aaa61",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "20b82be27008b0d0",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "test.mosquitto.org",
+        "port": "1883",
+        "clientid": "esp32LED",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "ec5371c7e2b0ee4b",
+        "type": "openhab2-controller2",
+        "name": "openHAB Ubiquarium",
+        "protocol": "http",
+        "host": "openhab.ubiquarium.fr",
+        "port": "80",
+        "path": "",
+        "username": "",
+        "password": "",
+        "ohversion": "v3",
+        "token": "oh.dummyiot.6vBgcdLf3QqdVRnWmy3r4RjMdjp17tLZC06EskSpDH1oAQ9sQLXQCxI2uuBaFQRkmzB1tsSfIFH9p7C3GjsQ"
+    },
+    {
+        "id": "0dfea18073a4cf51",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": "8086",
+        "protocol": "http",
+        "database": "database",
+        "name": "",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "2.0",
+        "url": "http://localhost:8086",
+        "rejectUnauthorized": true
+    },
+    {
+        "id": "8c9bd856c466f9b0",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "192.168.2.115",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "5",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "a371cbdaf457ea52",
+        "type": "debug",
+        "z": "85dbb29dd8da35ac",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "502e7d7536a32896",
+        "type": "http in",
+        "z": "85dbb29dd8da35ac",
+        "name": "",
+        "url": "app/lumiere/:timestamp/:value",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 160,
+        "y": 100,
+        "wires": [
+            [
+                "36f792bf33d86833",
+                "56bb2481bc7b874b"
+            ]
+        ]
+    },
+    {
+        "id": "36f792bf33d86833",
+        "type": "function",
+        "z": "85dbb29dd8da35ac",
+        "name": "function 1",
+        "func": "msg.payload = {\n    value: Number(msg.req.params.value),\n    time: new Date(Number(msg.req.params.timestamp))\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 160,
+        "wires": [
+            [
+                "e5304eec9be93e7d"
+            ]
+        ]
+    },
+    {
+        "id": "e5304eec9be93e7d",
+        "type": "debug",
+        "z": "85dbb29dd8da35ac",
+        "name": "debug 10",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "6c5ed7fa020f89f2",
+        "type": "http response",
+        "z": "85dbb29dd8da35ac",
+        "name": "Réponse",
+        "statusCode": "200",
+        "headers": {},
+        "x": 660,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "56bb2481bc7b874b",
+        "type": "function",
+        "z": "85dbb29dd8da35ac",
+        "name": "function 11",
+        "func": "msg.payload = \"lumiere;\" + String(Number(msg.req.params.timestamp));\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 40,
+        "wires": [
+            [
+                "6c5ed7fa020f89f2",
+                "a371cbdaf457ea52"
+            ]
+        ]
+    },
+    {
+        "id": "ef8f29ae01ff23fb",
+        "type": "inject",
+        "z": "85dbb29dd8da35ac",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 260,
+        "wires": [
+            [
+                "4e804dfffd6f143a"
+            ]
+        ]
+    },
+    {
+        "id": "2cf770eb1292b79a",
+        "type": "mqtt in",
+        "z": "85dbb29dd8da35ac",
+        "name": "",
+        "topic": "TP",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "0c3468b7234f44b3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 340,
+        "wires": [
+            [
+                "fa06a4489667cbed"
+            ]
+        ]
+    },
+    {
+        "id": "4e804dfffd6f143a",
+        "type": "mqtt out",
+        "z": "85dbb29dd8da35ac",
+        "name": "Test",
+        "topic": "TP",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "0c3468b7234f44b3",
+        "x": 350,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "fa06a4489667cbed",
+        "type": "debug",
+        "z": "85dbb29dd8da35ac",
+        "name": "debug 23",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 360,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "404ddec16ec7a5ea",
+        "type": "inject",
+        "z": "85dbb29dd8da35ac",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 130,
+        "y": 580,
+        "wires": [
+            [
+                "9e0363d90d4c7824"
+            ]
+        ]
+    },
+    {
+        "id": "9e0363d90d4c7824",
+        "type": "function",
+        "z": "85dbb29dd8da35ac",
+        "name": "function 25",
+        "func": "msg.query = `from(bucket:\"map\")\n|>range(start:-24h)\n|>filter(fn:(r) =>r._measurement==\"positiongps\" and r._field==\"latitude\")\n|>group()`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 580,
+        "wires": [
+            [
+                "07471ab1a3501975"
+            ]
+        ]
+    },
+    {
+        "id": "07471ab1a3501975",
+        "type": "influxdb in",
+        "z": "85dbb29dd8da35ac",
+        "influxdb": "6446dc955a436af4",
+        "name": "",
+        "query": "",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "org",
+        "x": 610,
+        "y": 580,
+        "wires": [
+            [
+                "93d3f5755cf86f46",
+                "885670af0cb817ad"
+            ]
+        ]
+    },
+    {
+        "id": "93d3f5755cf86f46",
+        "type": "debug",
+        "z": "85dbb29dd8da35ac",
+        "name": "debug 24",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "885670af0cb817ad",
+        "type": "http response",
+        "z": "85dbb29dd8da35ac",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 790,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "59653c83893f877e",
+        "type": "http in",
+        "z": "85dbb29dd8da35ac",
+        "name": "",
+        "url": "/app/data/latitude",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 100,
+        "y": 820,
+        "wires": [
+            [
+                "9e0363d90d4c7824"
+            ]
+        ]
+    },
+    {
+        "id": "6978e7e4282a2f7b",
+        "type": "http in",
+        "z": "85dbb29dd8da35ac",
+        "name": "POST from App",
+        "url": "/jsonData",
+        "method": "post",
+        "upload": true,
+        "swaggerDoc": "",
+        "x": 100,
+        "y": 940,
+        "wires": [
+            [
+                "2a363ba9f7e69b59"
+            ]
+        ]
+    },
+    {
+        "id": "2a363ba9f7e69b59",
+        "type": "function",
+        "z": "85dbb29dd8da35ac",
+        "name": "Process luminosities",
+        "func": "// Récupérer la chaîne de caractères\nvar luminositiesString = msg.payload.luminosities;\n\n// Regex pour extraire les paires clé/valeur\nvar regex = /(\\d+)=(\\d+\\.\\d+)/g;\nvar match;\nvar luminositiesObj = {};\n\n// Boucle pour extraire et stocker les paires clé/valeur dans un objet\nwhile (match = regex.exec(luminositiesString)) {\n    luminositiesObj[match[1]] = parseFloat(match[2]);\n}\n\nmsg.payload.luminosities = luminositiesObj;\n\nfor (var key in luminositiesObj) {\n    if (luminositiesObj.hasOwnProperty(key)) {\n        var obj = {\n            time: key, // Clé du dictionnaire comme \"time\"\n            light: luminositiesObj[key] // Valeur correspondante à la clé comme \"latitude\"\n        };\n        node.send(obj);\n    }\n}",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 940,
+        "wires": [
+            [
+                "61ed73a2dc58ecc3",
+                "680c180606761f7b"
+            ]
+        ]
+    },
+    {
+        "id": "61ed73a2dc58ecc3",
+        "type": "influxdb out",
+        "z": "85dbb29dd8da35ac",
+        "influxdb": "6446dc955a436af4",
+        "name": "",
+        "measurement": "light",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "org",
+        "bucket": "map",
+        "x": 860,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "680c180606761f7b",
+        "type": "debug",
+        "z": "85dbb29dd8da35ac",
+        "name": "output influxDB",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 840,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "b99cc9ff097c23ec",
+        "type": "inject",
+        "z": "85dbb29dd8da35ac",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "ON",
+        "payloadType": "str",
+        "x": 90,
+        "y": 1040,
+        "wires": [
+            [
+                "b6144ee94edb7b9b"
+            ]
+        ]
+    },
+    {
+        "id": "b6144ee94edb7b9b",
+        "type": "openhab2-out2",
+        "z": "85dbb29dd8da35ac",
+        "name": "",
+        "controller": "ec5371c7e2b0ee4b",
+        "itemname": "ClassroomLights01_Switch",
+        "topic": "ItemCommand",
+        "payload": "",
+        "onlywhenchanged": false,
+        "x": 300,
+        "y": 1060,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0dba6b47d4073959",
+        "type": "inject",
+        "z": "85dbb29dd8da35ac",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "OFF",
+        "payloadType": "str",
+        "x": 90,
+        "y": 1080,
+        "wires": [
+            [
+                "b6144ee94edb7b9b"
+            ]
+        ]
+    },
+    {
+        "id": "ad07cb0ff3364f18",
+        "type": "inject",
+        "z": "85dbb29dd8da35ac",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"test\":\"haha\"}",
+        "payloadType": "str",
+        "x": 110,
+        "y": 1240,
+        "wires": [
+            [
+                "6fc2212b3a1a132f",
+                "61c10afb2426d8c0",
+                "7835445366b3ce22"
+            ]
+        ]
+    },
+    {
+        "id": "6fc2212b3a1a132f",
+        "type": "debug",
+        "z": "85dbb29dd8da35ac",
+        "name": "debug 22",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 1360,
+        "wires": []
+    },
+    {
+        "id": "26dc4d3f1a661c58",
+        "type": "function",
+        "z": "85dbb29dd8da35ac",
+        "name": "function 23",
+        "func": "msg.payload = msg.payload.test\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 1220,
+        "wires": [
+            [
+                "6fc2212b3a1a132f"
+            ]
+        ]
+    },
+    {
+        "id": "61c10afb2426d8c0",
+        "type": "json",
+        "z": "85dbb29dd8da35ac",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 350,
+        "y": 1200,
+        "wires": [
+            [
+                "26dc4d3f1a661c58"
+            ]
+        ]
+    },
+    {
+        "id": "7835445366b3ce22",
+        "type": "function",
+        "z": "85dbb29dd8da35ac",
+        "name": "function 24",
+        "func": "msg.payload = JSON.parse(msg.payload).test\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 1280,
+        "wires": [
+            [
+                "6fc2212b3a1a132f"
+            ]
+        ]
+    },
+    {
+        "id": "38001f9e3578f696",
+        "type": "aedes broker",
+        "z": "01cf86edd6e478b0",
+        "name": "",
+        "mqtt_port": "1883",
+        "mqtt_ws_bind": "path",
+        "mqtt_ws_port": "",
+        "mqtt_ws_path": "",
+        "cert": "",
+        "key": "",
+        "certname": "",
+        "keyname": "",
+        "dburl": "",
+        "usetls": false,
+        "x": 210,
+        "y": 100,
+        "wires": [
+            [
+                "7da18b3d40c83017"
+            ],
+            [
+                "3cf7e4a3d617da5b"
+            ]
+        ]
+    },
+    {
+        "id": "7da18b3d40c83017",
+        "type": "debug",
+        "z": "01cf86edd6e478b0",
+        "name": "Borker Status Event",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 440,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "3cf7e4a3d617da5b",
+        "type": "debug",
+        "z": "01cf86edd6e478b0",
+        "name": "Borkeur Publish Event",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 440,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "bc91c37e27275686",
+        "type": "inject",
+        "z": "01cf86edd6e478b0",
+        "name": "",
+        "props": [],
+        "repeat": "300",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 160,
+        "y": 200,
+        "wires": [
+            [
+                "e1395c1c0b9d13c8"
+            ]
+        ]
+    },
+    {
+        "id": "e1395c1c0b9d13c8",
+        "type": "http request",
+        "z": "01cf86edd6e478b0",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://openhab.ubiquarium.fr/rest/items/",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 390,
+        "y": 200,
+        "wires": [
+            [
+                "1a831509486482e0"
+            ]
+        ]
+    },
+    {
+        "id": "b81a4b8a7cc6db82",
+        "type": "switch",
+        "z": "01cf86edd6e478b0",
+        "name": "",
+        "property": "payload.category",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "contact",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "temperature",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "carbondioxide",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 3,
+        "x": 580,
+        "y": 300,
+        "wires": [
+            [
+                "5ca0cbf286ef0924"
+            ],
+            [
+                "b21e2b9db89f42b2"
+            ],
+            [
+                "e861f7998b9c8216"
+            ]
+        ]
+    },
+    {
+        "id": "7cd2ea5d6f3b8df9",
+        "type": "split",
+        "z": "01cf86edd6e478b0",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 270,
+        "y": 300,
+        "wires": [
+            [
+                "f439b1d7ca27a3ce"
+            ]
+        ]
+    },
+    {
+        "id": "1a831509486482e0",
+        "type": "json",
+        "z": "01cf86edd6e478b0",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 110,
+        "y": 300,
+        "wires": [
+            [
+                "7cd2ea5d6f3b8df9"
+            ]
+        ]
+    },
+    {
+        "id": "f439b1d7ca27a3ce",
+        "type": "switch",
+        "z": "01cf86edd6e478b0",
+        "name": "",
+        "property": "payload.state",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "NULL",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 1,
+        "x": 420,
+        "y": 300,
+        "wires": [
+            [
+                "b81a4b8a7cc6db82"
+            ]
+        ]
+    },
+    {
+        "id": "60f1c1aba44e9b8d",
+        "type": "function",
+        "z": "01cf86edd6e478b0",
+        "name": "get state",
+        "func": "msg.payload = msg.payload.state.split(\" °C\")[0]\nmsg.payload = Number(msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 200,
+        "y": 380,
+        "wires": [
+            [
+                "d652062c43778047"
+            ]
+        ]
+    },
+    {
+        "id": "d652062c43778047",
+        "type": "join",
+        "z": "01cf86edd6e478b0",
+        "name": "rejoindre",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "5",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 360,
+        "y": 380,
+        "wires": [
+            [
+                "5eb594de0abdf5b2"
+            ]
+        ]
+    },
+    {
+        "id": "5eb594de0abdf5b2",
+        "type": "function",
+        "z": "01cf86edd6e478b0",
+        "name": "get med",
+        "func": "function median(numbers) {\n    const sorted = Array.from(numbers).sort((a, b) => a - b);\n    const middle = Math.floor(sorted.length / 2);\n\n    if (sorted.length % 2 === 0) {\n        return (sorted[middle - 1] + sorted[middle]) / 2;\n    }\n\n    return sorted[middle];\n}\n\nmsg.payload = median(msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 380,
+        "wires": [
+            [
+                "e138524bf306e9b5"
+            ]
+        ]
+    },
+    {
+        "id": "37017c465a6a4b0a",
+        "type": "link in",
+        "z": "01cf86edd6e478b0",
+        "name": "link in 1",
+        "links": [
+            "b21e2b9db89f42b2"
+        ],
+        "x": 85,
+        "y": 380,
+        "wires": [
+            [
+                "60f1c1aba44e9b8d"
+            ]
+        ]
+    },
+    {
+        "id": "b21e2b9db89f42b2",
+        "type": "link out",
+        "z": "01cf86edd6e478b0",
+        "name": "link out 1",
+        "mode": "link",
+        "links": [
+            "37017c465a6a4b0a"
+        ],
+        "x": 755,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "6a752bd583b1d933",
+        "type": "function",
+        "z": "01cf86edd6e478b0",
+        "name": "get state",
+        "func": "msg.payload = msg.payload.state\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 200,
+        "y": 480,
+        "wires": [
+            [
+                "46b3adcfb196f62d"
+            ]
+        ]
+    },
+    {
+        "id": "5ca0cbf286ef0924",
+        "type": "link out",
+        "z": "01cf86edd6e478b0",
+        "name": "link out 2",
+        "mode": "link",
+        "links": [
+            "8b6e14a75e07a588"
+        ],
+        "x": 755,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "8b6e14a75e07a588",
+        "type": "link in",
+        "z": "01cf86edd6e478b0",
+        "name": "link in 2",
+        "links": [
+            "5ca0cbf286ef0924"
+        ],
+        "x": 85,
+        "y": 480,
+        "wires": [
+            [
+                "6a752bd583b1d933"
+            ]
+        ]
+    },
+    {
+        "id": "46b3adcfb196f62d",
+        "type": "join",
+        "z": "01cf86edd6e478b0",
+        "name": "rejoindre",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "5",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 360,
+        "y": 480,
+        "wires": [
+            [
+                "3429ba3d690dc86f"
+            ]
+        ]
+    },
+    {
+        "id": "3429ba3d690dc86f",
+        "type": "function",
+        "z": "01cf86edd6e478b0",
+        "name": "is OPEN",
+        "func": "function checkIfOneIsOn(list) {\n    return list.includes(\"OPEN\");\n}\n\nmsg.payload = checkIfOneIsOn(msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 480,
+        "wires": [
+            [
+                "81535891861c1126"
+            ]
+        ]
+    },
+    {
+        "id": "e861f7998b9c8216",
+        "type": "link out",
+        "z": "01cf86edd6e478b0",
+        "name": "link out 3",
+        "mode": "link",
+        "links": [
+            "dfccdffba743ce4d"
+        ],
+        "x": 755,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "dfccdffba743ce4d",
+        "type": "link in",
+        "z": "01cf86edd6e478b0",
+        "name": "link in 3",
+        "links": [
+            "e861f7998b9c8216"
+        ],
+        "x": 65,
+        "y": 560,
+        "wires": [
+            [
+                "4486c789488c5e90"
+            ]
+        ]
+    },
+    {
+        "id": "641105a4f1e3ccca",
+        "type": "function",
+        "z": "01cf86edd6e478b0",
+        "name": "get state",
+        "func": "msg.payload = msg.payload.state.split(\" ppm\")[0]\nmsg.payload = Number(msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 560,
+        "wires": [
+            [
+                "c42a6a6a8fc01b22"
+            ]
+        ]
+    },
+    {
+        "id": "4486c789488c5e90",
+        "type": "switch",
+        "z": "01cf86edd6e478b0",
+        "name": "",
+        "property": "payload.state",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "regex",
+                "v": "[0-9]* ppm",
+                "vt": "str",
+                "case": false
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 1,
+        "x": 180,
+        "y": 560,
+        "wires": [
+            [
+                "641105a4f1e3ccca"
+            ]
+        ]
+    },
+    {
+        "id": "c42a6a6a8fc01b22",
+        "type": "join",
+        "z": "01cf86edd6e478b0",
+        "name": "rejoindre",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "5",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 520,
+        "y": 560,
+        "wires": [
+            [
+                "6ca58b47f7cd1892"
+            ]
+        ]
+    },
+    {
+        "id": "6ca58b47f7cd1892",
+        "type": "function",
+        "z": "01cf86edd6e478b0",
+        "name": "get med",
+        "func": "function median(numbers) {\n    const sorted = Array.from(numbers).sort((a, b) => a - b);\n    const middle = Math.floor(sorted.length / 2);\n\n    if (sorted.length % 2 === 0) {\n        return (sorted[middle - 1] + sorted[middle]) / 2;\n    }\n\n    return sorted[middle];\n}\n\nmsg.payload = median(msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 560,
+        "wires": [
+            [
+                "c7e63567d95e630b"
+            ]
+        ]
+    },
+    {
+        "id": "fcf65f1f21abc125",
+        "type": "inject",
+        "z": "01cf86edd6e478b0",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "ON",
+        "payloadType": "str",
+        "x": 230,
+        "y": 840,
+        "wires": [
+            [
+                "d22acc1de1a09c0e"
+            ]
+        ]
+    },
+    {
+        "id": "d22acc1de1a09c0e",
+        "type": "openhab2-out2",
+        "z": "01cf86edd6e478b0",
+        "name": "",
+        "controller": "ec5371c7e2b0ee4b",
+        "itemname": "WallPlug12_Switch",
+        "topic": "ItemCommand",
+        "payload": "",
+        "onlywhenchanged": false,
+        "x": 530,
+        "y": 860,
+        "wires": [
+            [
+                "bb06df5fdd8d49f4"
+            ]
+        ]
+    },
+    {
+        "id": "c76725702967ad68",
+        "type": "inject",
+        "z": "01cf86edd6e478b0",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "OFF",
+        "payloadType": "str",
+        "x": 230,
+        "y": 900,
+        "wires": [
+            [
+                "d22acc1de1a09c0e"
+            ]
+        ]
+    },
+    {
+        "id": "6ad3518a7973a268",
+        "type": "mqtt in",
+        "z": "01cf86edd6e478b0",
+        "name": "",
+        "topic": "commande/filtre",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "0c3468b7234f44b3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 220,
+        "y": 780,
+        "wires": [
+            [
+                "d22acc1de1a09c0e"
+            ]
+        ]
+    },
+    {
+        "id": "81535891861c1126",
+        "type": "function",
+        "z": "01cf86edd6e478b0",
+        "name": "windows",
+        "func": "msg.payload = {\n    measurement : \"IsWindowOpen\",\n    value: msg.payload,\n    time: new Date().getTime()\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 480,
+        "wires": [
+            [
+                "529a08c35f596cae",
+                "1a8841945c150852"
+            ]
+        ]
+    },
+    {
+        "id": "c7e63567d95e630b",
+        "type": "function",
+        "z": "01cf86edd6e478b0",
+        "name": "Co2",
+        "func": "msg.payload = {\n    measurement : \"co2\",\n    value: msg.payload,\n    time: new Date().getTime()\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 830,
+        "y": 560,
+        "wires": [
+            [
+                "529a08c35f596cae",
+                "1a8841945c150852"
+            ]
+        ]
+    },
+    {
+        "id": "e138524bf306e9b5",
+        "type": "function",
+        "z": "01cf86edd6e478b0",
+        "name": "temperature",
+        "func": "msg.payload = {\n    measurement : \"Temperature\",\n    value: msg.payload,\n    time: new Date().getTime()\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 420,
+        "wires": [
+            [
+                "529a08c35f596cae",
+                "1a8841945c150852"
+            ]
+        ]
+    },
+    {
+        "id": "bb06df5fdd8d49f4",
+        "type": "mqtt out",
+        "z": "01cf86edd6e478b0",
+        "name": "status/filtre",
+        "topic": "status/filtre",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "0c3468b7234f44b3",
+        "x": 770,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "529a08c35f596cae",
+        "type": "function",
+        "z": "01cf86edd6e478b0",
+        "name": "enregistre les valeurs",
+        "func": "if (msg.payload.measurement == \"co2\") {\n    flow.set(\"co2\", msg.payload.value);\n} else if (msg.payload.measurement == \"temperature\") {\n    flow.set(\"temperature\", msg.payload.value);\n} else if (msg.payload.measurement == \"IsWindowOpen\") {\n    flow.set(\"IsWindowOpen\", msg.payload.value);\n}\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1020,
+        "y": 460,
+        "wires": [
+            [
+                "573e9ec361f192f2"
+            ]
+        ]
+    },
+    {
+        "id": "9bbfef1b63f9710e",
+        "type": "mqtt out",
+        "z": "01cf86edd6e478b0",
+        "name": "status/sensor_commande",
+        "topic": "status/sensor_commande",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "0c3468b7234f44b3",
+        "x": 750,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "8e1f6abfc5bca709",
+        "type": "function",
+        "z": "01cf86edd6e478b0",
+        "name": "function 28",
+        "func": "msg.payload = { co2Interieur: flow.get(\"co2\"), IsWindowOpen: flow.get(\"IsWindowOpen\") };\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "// Le code ajouté ici sera exécuté une fois\n// à chaque démarrage du noeud.\nflow.set(\"temperature\", 20);\nflow.set(\"co2\", 0);\nflow.set(\"IsWindowOpen\", \"CLOSE\");",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 640,
+        "wires": [
+            [
+                "9bbfef1b63f9710e",
+                "e3612fd46055ae59"
+            ]
+        ]
+    },
+    {
+        "id": "2411e2f7ea3e1010",
+        "type": "inject",
+        "z": "01cf86edd6e478b0",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 290,
+        "y": 640,
+        "wires": [
+            [
+                "8e1f6abfc5bca709"
+            ]
+        ]
+    },
+    {
+        "id": "e3612fd46055ae59",
+        "type": "debug",
+        "z": "01cf86edd6e478b0",
+        "name": "debug 25",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "573e9ec361f192f2",
+        "type": "mqtt out",
+        "z": "01cf86edd6e478b0",
+        "name": "status/sensor",
+        "topic": "status/sensor",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "0c3468b7234f44b3",
+        "x": 1030,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "1a8841945c150852",
+        "type": "debug",
+        "z": "01cf86edd6e478b0",
+        "name": "debug 26",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1020,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "fa51e21607caa7bb",
+        "type": "mqtt in",
+        "z": "01cf86edd6e478b0",
+        "name": "",
+        "topic": "status/sensor_demande",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "0c3468b7234f44b3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 240,
+        "y": 700,
+        "wires": [
+            [
+                "8e1f6abfc5bca709",
+                "e3612fd46055ae59"
+            ]
+        ]
+    },
+    {
+        "id": "e8bf90949dc7c087",
+        "type": "http request",
+        "z": "8c0a870be71dee97",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "query",
+        "url": "http://127.0.0.1:1880/database",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 630,
+        "y": 140,
+        "wires": [
+            [
+                "da97d34405fcdbdc"
+            ]
+        ]
+    },
+    {
+        "id": "4f93aef050034faa",
+        "type": "http in",
+        "z": "8c0a870be71dee97",
+        "name": "Retour DB",
+        "url": "envoie",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 360,
+        "y": 520,
+        "wires": [
+            [
+                "dc5a2620033a3dc6",
+                "63c13479274ef828"
+            ]
+        ]
+    },
+    {
+        "id": "dc5a2620033a3dc6",
+        "type": "debug",
+        "z": "8c0a870be71dee97",
+        "name": "retour DB",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "324a217fe9ebbdb4",
+        "type": "inject",
+        "z": "8c0a870be71dee97",
+        "name": "Demmande info température",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 240,
+        "y": 420,
+        "wires": [
+            [
+                "3d13b7da9e5386b3"
+            ]
+        ]
+    },
+    {
+        "id": "93230d2937ae99bb",
+        "type": "http request",
+        "z": "8c0a870be71dee97",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "query",
+        "url": "http://127.0.0.1:1880/database2",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "Content-Type",
+                "keyValue": "",
+                "valueType": "text/plain",
+                "valueValue": ""
+            }
+        ],
+        "x": 730,
+        "y": 460,
+        "wires": [
+            [
+                "5b8a81413debf94b"
+            ]
+        ]
+    },
+    {
+        "id": "3d13b7da9e5386b3",
+        "type": "function",
+        "z": "8c0a870be71dee97",
+        "name": "Commande",
+        "func": "msg.payload = \"temperature\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 420,
+        "wires": [
+            [
+                "93230d2937ae99bb"
+            ]
+        ]
+    },
+    {
+        "id": "5b8a81413debf94b",
+        "type": "debug",
+        "z": "8c0a870be71dee97",
+        "name": "commande répondu",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 980,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "6e2d8470f217a63f",
+        "type": "inject",
+        "z": "8c0a870be71dee97",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "ON",
+        "payloadType": "str",
+        "x": 270,
+        "y": 40,
+        "wires": [
+            [
+                "a8a7c1a3cd970e37"
+            ]
+        ]
+    },
+    {
+        "id": "d5ab87de939be8f2",
+        "type": "inject",
+        "z": "8c0a870be71dee97",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "OFF",
+        "payloadType": "str",
+        "x": 270,
+        "y": 80,
+        "wires": [
+            [
+                "a8a7c1a3cd970e37"
+            ]
+        ]
+    },
+    {
+        "id": "a8a7c1a3cd970e37",
+        "type": "mqtt out",
+        "z": "8c0a870be71dee97",
+        "name": "",
+        "topic": "commande/filtre",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "0c3468b7234f44b3",
+        "x": 580,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "63c13479274ef828",
+        "type": "http response",
+        "z": "8c0a870be71dee97",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 560,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "0480765656fceb74",
+        "type": "debug",
+        "z": "8c0a870be71dee97",
+        "name": "Réponse requête",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1030,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "da97d34405fcdbdc",
+        "type": "switch",
+        "z": "8c0a870be71dee97",
+        "name": "",
+        "property": "statusCode",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "200",
+                "vt": "str"
+            },
+            {
+                "t": "neq",
+                "v": "200",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 820,
+        "y": 140,
+        "wires": [
+            [
+                "0480765656fceb74"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "2b3de1bde8bf86b4",
+        "type": "function",
+        "z": "8c0a870be71dee97",
+        "name": "Commande",
+        "func": "msg.payload = \"motion\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 460,
+        "wires": [
+            [
+                "93230d2937ae99bb"
+            ]
+        ]
+    },
+    {
+        "id": "0b8da060bbc85ef8",
+        "type": "inject",
+        "z": "8c0a870be71dee97",
+        "name": "Demmande info motion",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 220,
+        "y": 460,
+        "wires": [
+            [
+                "2b3de1bde8bf86b4"
+            ]
+        ]
+    },
+    {
+        "id": "220be303f64914f9",
+        "type": "function",
+        "z": "8c0a870be71dee97",
+        "name": "traitement donnée",
+        "func": "function convertStringListToNumberList(stringList) {\n    return stringList.map(Number);\n}\n\nfunction checkIfOneIsOn(list) {\n    return list.includes(\"ON\");\n}\n\nlet stringNumber = \"42\";\nlet number = Number(stringNumber);\nconsole.log(number); // Output: 42\n\n//msg.payload = { var: { temperatureExterieur: 20.2, co2Interieur: 1000, pollutionInterieur: 100, pollutionExterieur: 100, pollenExterieur: 2 }, limite: { temperatureExterieur_limite_inf: 18, temperatureExterieur_limite_sup: 25, co2Interieur_limite: 700, pollutionInterieur_limite: 100, pollutionExterieur_limite: 150, pollenExterieur_limite: 1 } }\n\n// initialisation des variables de entrée\n\nlet temperatureExterieur = msg.payload.var.temperatureExterieur;\nlet co2Interieur = msg.payload.var.co2Interieur;\nlet pollutionInterieur = msg.payload.var.pollutionInterieur;\nlet pollutionExterieur = msg.payload.var.pollutionExterieur;\nlet pollenExterieur = msg.payload.var.pollenExterieur; // 0 : low, 1 : medium, 2 : high\n\n// initilisation des limites\n\nlet temperatureExterieur_limite_inf = msg.payload.limite.temperatureExterieur_limite_inf;\nlet temperatureExterieur_limite_sup = msg.payload.limite.temperatureExterieur_limite_sup;\nlet co2Interieur_limite = msg.payload.limite.co2Interieur_limite;\nlet pollutionInterieur_limite = msg.payload.limite.pollutionInterieur_limite;\nlet pollutionExterieur_limite = msg.payload.limite.pollutionExterieur_limite;\nlet pollenExterieur_limite = msg.payload.limite.pollenExterieur_limite; // 0 : low, 1 : medium, 2 : high, 3 : no_limit\n\nlet fenetre = \"CLOSE\"; // ouvert ou fermé (recommandation de l'application via une alerte)\nlet tempsOuverture = 0; // 0, 10 ou 30 min (recommandation de l'application via une alerte)\nlet filtreAir = \"off\"; // on ou off\nlet Alerte_allergie = \"false\"; // send une notification si pollen élever\nlet Alerte_co2_fenetre_ouverte = \"false\"; // send une notification si co2 élever + fenêtre ouverte \nlet Alerte_co2_fenetre_ferme = \"false\"; // send une notification si co2 élever + fenêtre fermé\n\n\n// que fait let : https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Instructions/let\n\n// fonction si porobleme de polution (général)\n\nfunction problemePolution() {\n    if (co2Interieur > co2Interieur_limite) { // si co2 élever, ouvrir les fenêtres sauf pic de pollution extérieur, \n        // différence dans le temps d'ouverture des fenêtres recommander par l'application\n        if (pollutionExterieur > pollutionExterieur_limite) { // si pollution extérieur élever, on attend que la qualité de l'air s'améliore\n            fenetre = \"fermé\";\n            Alerte_co2_fenetre_ferme = \"true\";\n            if (pollutionInterieur > pollutionInterieur_limite) { // si pollution intérieur élever, on allume le filtre à air\n                filtreAir = \"on\";\n            }\n            if (pollenExterieur > pollenExterieur_limite) {\n                filtreAir = \"on\";\n                Alerte_allergie = \"true\";\n            }\n        } else if (temperatureExterieur > temperatureExterieur_limite_inf || temperatureExterieur < temperatureExterieur_limite_sup || pollenExterieur > pollenExterieur_limite) {\n            if (pollenExterieur > pollenExterieur_limite) {\n                Alerte_allergie = \"true\";\n            }\n            fenetre = \"ouvert\";\n            tempsOuverture = 10;\n            filtreAir = \"on\";\n            Alerte_co2_fenetre_ouverte = \"true\";\n\n        } else {\n            fenetre = \"ouvert\";\n            tempsOuverture = 30;\n            Alerte_co2_fenetre_ouverte = \"true\";\n        }\n    } else if (pollutionInterieur > pollutionInterieur_limite) {\n        if (pollenExterieur > pollenExterieur_limite) {\n            fenetre = \"fermé\";\n            filtreAir = \"on\";\n            Alerte_allergie = \"true\";\n        } else if (temperatureExterieur > temperatureExterieur_limite_inf || temperatureExterieur < temperatureExterieur_limite_sup) {\n            fenetre = \"fermé\";\n            filtreAir = \"on\";\n        } else {\n            fenetre = \"ouvert\";\n            filtreAir = \"on\";\n        }\n    } else if (pollenExterieur > pollenExterieur_limite) {\n        fenetre = \"fermé\";\n        filtreAir = \"on\";\n        Alerte_allergie = \"true\";\n    } else {\n        filtreAir = \"off\";\n    }\n}\n\n// test de la fonction problemePolution\n\nproblemePolution();\n\nif (filtreAir == \"on\"){\n    filtreAir = \"ON\";\n}else {\n    filtreAir = \"OFF\";\n}\n\nmsg.payload = { fenetre : fenetre, tempsOuverture : tempsOuverture, filtreAir : filtreAir, Alerte_allergie : Alerte_allergie, Alerte_co2_fenetre_ouverte : Alerte_co2_fenetre_ouverte, Alerte_co2_fenetre_ferme : Alerte_co2_fenetre_ferme };\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 720,
+        "wires": [
+            [
+                "36252714a7512347",
+                "2052f9903fa5f83c",
+                "48ca73c56524246a"
+            ]
+        ]
+    },
+    {
+        "id": "15b993a03ae4a10a",
+        "type": "inject",
+        "z": "8c0a870be71dee97",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 250,
+        "y": 680,
+        "wires": [
+            [
+                "bc79dea778406619"
+            ]
+        ]
+    },
+    {
+        "id": "36252714a7512347",
+        "type": "debug",
+        "z": "8c0a870be71dee97",
+        "name": "WallPlug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "bc79dea778406619",
+        "type": "function",
+        "z": "8c0a870be71dee97",
+        "name": "inject info",
+        "func": "msg.payload = { var : { temperatureExterieur: 20.2, co2Interieur: 400, pollutionInterieur: 100, pollutionExterieur: 100, pollenExterieur: 2, IsWIndowsOpen : \"OPEN\" }, limite: { temperatureExterieur_limite_inf: 18, temperatureExterieur_limite_sup: 25, co2Interieur_limite: 700, pollutionInterieur_limite: 100, pollutionExterieur_limite: 150, pollenExterieur_limite: 3 } }\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 680,
+        "wires": [
+            [
+                "220be303f64914f9"
+            ]
+        ]
+    },
+    {
+        "id": "e5381afc38c466a4",
+        "type": "mqtt in",
+        "z": "8c0a870be71dee97",
+        "name": "",
+        "topic": "status/sensor_commande",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "0c3468b7234f44b3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 690,
+        "y": 1080,
+        "wires": [
+            [
+                "bdf1624cd6854a24",
+                "d7509b0adb27acfb"
+            ]
+        ]
+    },
+    {
+        "id": "f420dd89dd830ba3",
+        "type": "mqtt out",
+        "z": "8c0a870be71dee97",
+        "name": "",
+        "topic": "status/sensor_demande",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "0c3468b7234f44b3",
+        "x": 690,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "bdf1624cd6854a24",
+        "type": "debug",
+        "z": "8c0a870be71dee97",
+        "name": "info sensor",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 910,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "34fd3aafcd671127",
+        "type": "debug",
+        "z": "8c0a870be71dee97",
+        "name": "status",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 510,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "9a51288e952cc9a8",
+        "type": "mqtt in",
+        "z": "8c0a870be71dee97",
+        "name": "",
+        "topic": "status/sensor",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "0c3468b7234f44b3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 230,
+        "y": 140,
+        "wires": [
+            [
+                "e8bf90949dc7c087"
+            ]
+        ]
+    },
+    {
+        "id": "d809690fccea3c8e",
+        "type": "mqtt in",
+        "z": "8c0a870be71dee97",
+        "name": "",
+        "topic": "status/filtre",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "0c3468b7234f44b3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 200,
+        "y": 340,
+        "wires": [
+            [
+                "34fd3aafcd671127"
+            ]
+        ]
+    },
+    {
+        "id": "e8abcba1a938a263",
+        "type": "mqtt out",
+        "z": "8c0a870be71dee97",
+        "name": "",
+        "topic": "commande/filtre",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "0c3468b7234f44b3",
+        "x": 1020,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "2052f9903fa5f83c",
+        "type": "function",
+        "z": "8c0a870be71dee97",
+        "name": "filtre air",
+        "func": "msg.payload = msg.payload.filtreAir;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 820,
+        "y": 660,
+        "wires": [
+            [
+                "e8abcba1a938a263"
+            ]
+        ]
+    },
+    {
+        "id": "48ca73c56524246a",
+        "type": "function",
+        "z": "8c0a870be71dee97",
+        "name": "Alerte",
+        "func": "msg.payload = { alerte_pic_polution: msg.payload.Alerte_co2_fenetre_ferme, alerte_pollen: msg.payload.Alerte_allergie, tempsOverture: msg.payload.tempsOuverture };\n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 810,
+        "y": 720,
+        "wires": [
+            [
+                "6f7841bf744720bf"
+            ]
+        ]
+    },
+    {
+        "id": "6f7841bf744720bf",
+        "type": "debug",
+        "z": "8c0a870be71dee97",
+        "name": "Tel",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 990,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "f45928bb70b8debe",
+        "type": "http request",
+        "z": "8c0a870be71dee97",
+        "name": "Information profil",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 870,
+        "y": 920,
+        "wires": [
+            [
+                "560f29478411b126",
+                "d7509b0adb27acfb"
+            ]
+        ]
+    },
+    {
+        "id": "24a1f0f436a6e410",
+        "type": "inject",
+        "z": "8c0a870be71dee97",
+        "name": "Mise a jour",
+        "props": [],
+        "repeat": "3600",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 170,
+        "y": 940,
+        "wires": [
+            [
+                "fcc1d3edbbf2a5f5"
+            ]
+        ]
+    },
+    {
+        "id": "c60341e8bab0d64c",
+        "type": "function",
+        "z": "8c0a870be71dee97",
+        "name": "url récup profil",
+        "func": "\nmsg.url = \"https://cdscpgr22024.000webhostapp.com/test.php?nom=\" + flow.get(\"nom\") + \"&prenom=\"+ flow.get(\"prenom\");\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "// Le code ajouté ici sera exécuté une fois\n// à chaque démarrage du noeud.\nflow.set(\"nom\",\"\");\nflow.set(\"prenom\", \"\");",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 920,
+        "wires": [
+            [
+                "f45928bb70b8debe"
+            ]
+        ]
+    },
+    {
+        "id": "560f29478411b126",
+        "type": "debug",
+        "z": "8c0a870be71dee97",
+        "name": "test",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1070,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "3483f6b65e92878c",
+        "type": "function",
+        "z": "8c0a870be71dee97",
+        "name": "modif profil",
+        "func": "flow.set(\"nom\", msg.payload.nom);\nflow.set(\"prenom\", msg.payload.prenom);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 880,
+        "wires": [
+            [
+                "c60341e8bab0d64c",
+                "f420dd89dd830ba3",
+                "55a0355c83fc74b1"
+            ]
+        ]
+    },
+    {
+        "id": "fcc1d3edbbf2a5f5",
+        "type": "switch",
+        "z": "8c0a870be71dee97",
+        "name": "",
+        "property": "nom",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "nempty"
+            },
+            {
+                "t": "empty"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 360,
+        "y": 940,
+        "wires": [
+            [
+                "c60341e8bab0d64c"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "c01d1044d779167f",
+        "type": "inject",
+        "z": "8c0a870be71dee97",
+        "name": "Changement de profil",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 180,
+        "y": 780,
+        "wires": [
+            [
+                "4434860c9bf380cb"
+            ]
+        ]
+    },
+    {
+        "id": "4434860c9bf380cb",
+        "type": "function",
+        "z": "8c0a870be71dee97",
+        "name": "test profil",
+        "func": "msg.payload = {nom : \"John\" , prenom : \"Doe\"}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 160,
+        "y": 860,
+        "wires": [
+            [
+                "3483f6b65e92878c"
+            ]
+        ]
+    },
+    {
+        "id": "4cd98acd27c16150",
+        "type": "http request",
+        "z": "8c0a870be71dee97",
+        "name": "API Extérieur",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 850,
+        "y": 1160,
+        "wires": [
+            [
+                "d7509b0adb27acfb"
+            ]
+        ]
+    },
+    {
+        "id": "55a0355c83fc74b1",
+        "type": "function",
+        "z": "8c0a870be71dee97",
+        "name": "function 34",
+        "func": "msg.url = \"https://cdscpgr22024.000webhostapp.com/test.php?nom=\" + flow.get(\"nom\") + \"&prenom=\"+ flow.get(\"prenom\");\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "// Le code ajouté ici sera exécuté une fois\n// à chaque démarrage du noeud.\nflow.set(\"nom\",\"\");\nflow.set(\"prenom\", \"\");",
+        "finalize": "",
+        "libs": [],
+        "x": 650,
+        "y": 1160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d165a9992c0ac614",
+        "type": "inject",
+        "z": "8c0a870be71dee97",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 1240,
+        "wires": [
+            [
+                "d347d282bc2aed18"
+            ]
+        ]
+    },
+    {
+        "id": "d347d282bc2aed18",
+        "type": "function",
+        "z": "8c0a870be71dee97",
+        "name": "function 35",
+        "func": "msg.url = \"http://api.openweathermap.org/data/2.5/air_pollution?lat=43.615334&lon=7.071642&appid=86588862e9290e719bd1e359defef140\"\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 1240,
+        "wires": [
+            [
+                "43a23f90e6175ad6"
+            ]
+        ]
+    },
+    {
+        "id": "43a23f90e6175ad6",
+        "type": "http request",
+        "z": "8c0a870be71dee97",
+        "name": "API Extérieur",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 510,
+        "y": 1240,
+        "wires": [
+            [
+                "a22c34e65e4a69db"
+            ]
+        ]
+    },
+    {
+        "id": "a22c34e65e4a69db",
+        "type": "debug",
+        "z": "8c0a870be71dee97",
+        "name": "API sortie",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "d7509b0adb27acfb",
+        "type": "function",
+        "z": "8c0a870be71dee97",
+        "name": "attribue part",
+        "func": "let part = 0;\nif (msg.payload.aqi == undefined) {\n    part = 0;\n} else if (msg.payload.co2 == undefined) {\n    part = 1;\n} else {\n    part = 2;\n}\n\nmsg.payload = { part: part, data: msg.payload };\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
+        "y": 1040,
+        "wires": [
+            [
+                "c40d90210901a113"
+            ]
+        ]
+    },
+    {
+        "id": "c40d90210901a113",
+        "type": "join",
+        "z": "8c0a870be71dee97",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "3",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1220,
+        "y": 1040,
+        "wires": [
+            [
+                "abdf91e52fff7fa6"
+            ]
+        ]
+    },
+    {
+        "id": "abdf91e52fff7fa6",
+        "type": "function",
+        "z": "8c0a870be71dee97",
+        "name": "rassemble info",
+        "func": "let part = 0;\nif (msg.payload.temperatureExterieur == undefined) {\n    part = 0;\n} else if (msg.payload.co2Exterieur == undefined) {\n    part = 1;\n} else {\n    part = 2;\n}\nmsg.part = part;\n\n\nlet var1 = 0; // donnée OpenHab\nlet var2 = 1; // donnée API\nlet var3 = 2; // Profile utilisateur\nlet pollutionInterieur_test = 100; // pas de donnée OpenHab\n\nlet b = { var: { ...msg.payload[var1].data, ...msg.payload[var2].data ,  pollutionInterieur : pollutionInterieur_test},  limit : msg.payload[var2].data }\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1420,
+        "y": 1040,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "107274c0f9c582d7",
+        "type": "debug",
+        "z": "d182c61009b1a41f",
+        "name": "Pollen",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 930,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "0522c50bf13f7181",
+        "type": "inject",
+        "z": "d182c61009b1a41f",
+        "name": "Repeat 15 min",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "900",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "562cc78fb6c8afdd",
+        "type": "function",
+        "z": "d182c61009b1a41f",
+        "name": "function 1",
+        "func": "msg.payload = JSON.parse(flow.get(\"pollenLevel\")).data[0].Risk\nlet isPollenMediumOrHigh = (msg.payload.grass_pollen == \"Medium\" || msg.payload.tree_pollen == \"Medium\" || msg.payload.weed_pollen == \"Medium\" || msg.payload.grass_pollen == \"High\" || msg.payload.tree_pollen == \"High\" || msg.payload.weed_pollen == \"High\");\nif (isPollenMediumOrHigh && flow.get(\"openState\") == \"OPEN\") {\n    msg.payload =  \"ALERT\"\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 240,
+        "wires": [
+            [
+                "a43424ecdb4edb7c"
+            ]
+        ]
+    },
+    {
+        "id": "ef0260e7fa2166a4",
+        "type": "inject",
+        "z": "d182c61009b1a41f",
+        "name": "Mock alerte",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"message\":\"success\",\"lat\":12,\"lng\":77,\"data\":[{\"timezone\":\"Asia/Kolkata\",\"Risk\":{\"grass_pollen\":\"High\",\"tree_pollen\":\"Low\",\"weed_pollen\":\"Low\"},\"Count\":{\"grass_pollen\":0,\"tree_pollen\":34,\"weed_pollen\":0},\"updatedAt\":\"2023-12-18T18:00:00.000Z\"}]}",
+        "payloadType": "str",
+        "x": 270,
+        "y": 200,
+        "wires": [
+            [
+                "635a9752fa1b8b37"
+            ]
+        ]
+    },
+    {
+        "id": "a43424ecdb4edb7c",
+        "type": "switch",
+        "z": "d182c61009b1a41f",
+        "name": "Check alerte pollen",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "ALERT",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 730,
+        "y": 240,
+        "wires": [
+            [
+                "650d876e46cb8902"
+            ],
+            [
+                "107274c0f9c582d7"
+            ]
+        ]
+    },
+    {
+        "id": "650d876e46cb8902",
+        "type": "simplepush",
+        "z": "d182c61009b1a41f",
+        "key": "dunPyx",
+        "title": "Alerte Pollen",
+        "message": "Attention, le taux de pollen extérieur est en hausse, pensez à fermer vos fenêtres !",
+        "attachments": "",
+        "event": "",
+        "actions": "",
+        "actionTimeout": 180,
+        "password": "",
+        "salt": "",
+        "name": "Notification smartphone pollen",
+        "outputs": 1,
+        "x": 1010,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1ddb8fe9000f1a1a",
+        "type": "inject",
+        "z": "d182c61009b1a41f",
+        "name": "Mock no pollen",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"message\":\"success\",\"lat\":12,\"lng\":77,\"data\":[{\"timezone\":\"Asia/Kolkata\",\"Risk\":{\"grass_pollen\":\"Low\",\"tree_pollen\":\"Low\",\"weed_pollen\":\"Low\"},\"Count\":{\"grass_pollen\":0,\"tree_pollen\":34,\"weed_pollen\":0},\"updatedAt\":\"2023-12-18T18:00:00.000Z\"}]}",
+        "payloadType": "str",
+        "x": 260,
+        "y": 260,
+        "wires": [
+            [
+                "635a9752fa1b8b37"
+            ]
+        ]
+    },
+    {
+        "id": "6ae5b944ccb481a6",
+        "type": "change",
+        "z": "d182c61009b1a41f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "openState",
+                "pt": "flow",
+                "to": "payload.value",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 720,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "635a9752fa1b8b37",
+        "type": "change",
+        "z": "d182c61009b1a41f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "pollenLevel",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 540,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9b2ef11a4716122b",
+        "type": "change",
+        "z": "d182c61009b1a41f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "co2Level",
+                "pt": "flow",
+                "to": "payload.value",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 560,
+        "y": 580,
+        "wires": [
+            [
+                "fb1e9f3ef55813eb"
+            ]
+        ]
+    },
+    {
+        "id": "fb1e9f3ef55813eb",
+        "type": "function",
+        "z": "d182c61009b1a41f",
+        "name": "function 2",
+        "func": "msg.payload = parseInt(flow.get(\"co2Level\"));\nlet isPollenMediumOrHigh = (msg.payload>=800);\nif (isPollenMediumOrHigh && flow.get(\"openState\") == \"CLOSED\") {\n    msg.payload =  \"ALERT\"\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "536c327b9116bfda",
+        "type": "switch",
+        "z": "d182c61009b1a41f",
+        "name": "Check alerte CO2",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "ALERT",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 810,
+        "y": 540,
+        "wires": [
+            [
+                "612d93160513facd"
+            ],
+            [
+                "13061e1a72801aaf"
+            ]
+        ]
+    },
+    {
+        "id": "612d93160513facd",
+        "type": "simplepush",
+        "z": "d182c61009b1a41f",
+        "key": "dunPyx",
+        "title": "Alerte Pollen",
+        "message": "Attention vos le taux de CO2 intérieur est en hausse, pensez à ouvrir vos fenêtres !",
+        "attachments": "",
+        "event": "",
+        "actions": "",
+        "actionTimeout": 180,
+        "password": "",
+        "salt": "",
+        "name": "Notification smartphone Co2",
+        "outputs": 1,
+        "x": 1040,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9e1bf2dda68159b6",
+        "type": "inject",
+        "z": "d182c61009b1a41f",
+        "name": "Mock CO2",
+        "props": [
+            {
+                "p": "payload.value",
+                "v": "1000 ppm",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 240,
+        "y": 500,
+        "wires": [
+            [
+                "9b2ef11a4716122b"
+            ]
+        ]
+    },
+    {
+        "id": "13061e1a72801aaf",
+        "type": "debug",
+        "z": "d182c61009b1a41f",
+        "name": "C02",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1050,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "ec42347a6343ca6b",
+        "type": "mqtt in",
+        "z": "d182c61009b1a41f",
+        "name": "",
+        "topic": "status/sensor",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "0c3468b7234f44b3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 210,
+        "y": 120,
+        "wires": [
+            [
+                "f6876d4511d83e7f"
+            ]
+        ]
+    },
+    {
+        "id": "f6876d4511d83e7f",
+        "type": "function",
+        "z": "d182c61009b1a41f",
+        "name": "if motion",
+        "func": "if (msg.payload.measurement == \"motion\") {\n    return msg;\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 120,
+        "wires": [
+            [
+                "6ae5b944ccb481a6"
+            ]
+        ]
+    },
+    {
+        "id": "d90c0c54ee3d62d0",
+        "type": "mqtt in",
+        "z": "d182c61009b1a41f",
+        "name": "",
+        "topic": "status/sensor",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "0c3468b7234f44b3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 90,
+        "y": 580,
+        "wires": [
+            [
+                "e7a634c75f9b0f18"
+            ]
+        ]
+    },
+    {
+        "id": "e7a634c75f9b0f18",
+        "type": "function",
+        "z": "d182c61009b1a41f",
+        "name": "if co2",
+        "func": "if (msg.payload.measurement == \"co2\") {\n    return msg;\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 580,
+        "wires": [
+            [
+                "9b2ef11a4716122b"
+            ]
+        ]
+    },
+    {
+        "id": "f9745867b54bf377",
+        "type": "inject",
+        "z": "d182c61009b1a41f",
+        "name": "Mock fenêtre OPEN",
+        "props": [
+            {
+                "p": "payload.value",
+                "v": "OPEN",
+                "vt": "str"
+            },
+            {
+                "p": "payload.measurement",
+                "v": "motion",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 210,
+        "y": 80,
+        "wires": [
+            [
+                "f6876d4511d83e7f"
+            ]
+        ]
+    },
+    {
+        "id": "9ea3c56e755599ed",
+        "type": "inject",
+        "z": "d182c61009b1a41f",
+        "name": "Mock fenêtre CLOSED",
+        "props": [
+            {
+                "p": "payload.value",
+                "v": "CLOSED",
+                "vt": "str"
+            },
+            {
+                "p": "payload.measurement",
+                "v": "motion",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 220,
+        "y": 40,
+        "wires": [
+            [
+                "f6876d4511d83e7f"
+            ]
+        ]
+    },
+    {
+        "id": "0fbfdc616c055b4e",
+        "type": "http in",
+        "z": "a42c20f09300ab12",
+        "name": "Enregistrer une donnée",
+        "url": "database",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 140,
+        "y": 160,
+        "wires": [
+            [
+                "b305ec4756a6a54a",
+                "918ca932c4bf6af9"
+            ]
+        ]
+    },
+    {
+        "id": "b305ec4756a6a54a",
+        "type": "http response",
+        "z": "a42c20f09300ab12",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 500,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "1b137ac3d0a8d8fd",
+        "type": "influxdb in",
+        "z": "a42c20f09300ab12",
+        "influxdb": "6446dc955a436af4",
+        "name": "",
+        "query": "",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "Student_Nice",
+        "x": 830,
+        "y": 400,
+        "wires": [
+            [
+                "0e9ee42799e9b893"
+            ]
+        ]
+    },
+    {
+        "id": "4617d51b24299ee2",
+        "type": "influxdb out",
+        "z": "a42c20f09300ab12",
+        "influxdb": "6446dc955a436af4",
+        "name": "",
+        "measurement": "",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "Student_Nice",
+        "bucket": " Local_Filtre_Air",
+        "x": 810,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "7416f08cfa3fb9af",
+        "type": "http in",
+        "z": "a42c20f09300ab12",
+        "name": "Récupération de donnée",
+        "url": "database2",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 130,
+        "y": 380,
+        "wires": [
+            [
+                "14857c69271d3efc",
+                "46278ee8836b61de"
+            ]
+        ]
+    },
+    {
+        "id": "14857c69271d3efc",
+        "type": "switch",
+        "z": "a42c20f09300ab12",
+        "name": "Choix query",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "temperature",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "motion",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 370,
+        "y": 400,
+        "wires": [
+            [
+                "f2299eb7e5bfb1b7"
+            ],
+            [
+                "983b463ed0448361"
+            ]
+        ]
+    },
+    {
+        "id": "f2299eb7e5bfb1b7",
+        "type": "function",
+        "z": "a42c20f09300ab12",
+        "name": "Query temperature",
+        "func": "msg.query = `from(bucket:\" Local_Filtre_Air\")\n|>range(start:-1h)\n|>filter(fn:(r) =>r._measurement==\"Temperature\")\n|>group()`;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 380,
+        "wires": [
+            [
+                "1b137ac3d0a8d8fd"
+            ]
+        ]
+    },
+    {
+        "id": "58a123551df4e7ea",
+        "type": "http request",
+        "z": "a42c20f09300ab12",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "query",
+        "url": "http://127.0.0.1:1880/envoie",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 810,
+        "y": 520,
+        "wires": [
+            [
+                "517b114fd2afc702"
+            ]
+        ]
+    },
+    {
+        "id": "517b114fd2afc702",
+        "type": "debug",
+        "z": "a42c20f09300ab12",
+        "name": "query",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 970,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "46278ee8836b61de",
+        "type": "http response",
+        "z": "a42c20f09300ab12",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 380,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "918ca932c4bf6af9",
+        "type": "function",
+        "z": "a42c20f09300ab12",
+        "name": "Entrée",
+        "func": "msg.measurement = msg.payload.measurement;\nReflect.deleteProperty(msg.payload, 'measurement');\n\nif (msg.measurement == \"Temperature\" || msg.measurement == \"co2\" ){\n    msg.payload.value = Number(msg.payload.value);\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 160,
+        "wires": [
+            [
+                "697ddcc8911250b6",
+                "4617d51b24299ee2"
+            ]
+        ]
+    },
+    {
+        "id": "697ddcc8911250b6",
+        "type": "debug",
+        "z": "a42c20f09300ab12",
+        "name": "enregistrement",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 800,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "cd77f107e49a7d02",
+        "type": "inject",
+        "z": "a42c20f09300ab12",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 370,
+        "y": 500,
+        "wires": [
+            [
+                "983b463ed0448361"
+            ]
+        ]
+    },
+    {
+        "id": "983b463ed0448361",
+        "type": "function",
+        "z": "a42c20f09300ab12",
+        "name": "Query motion",
+        "func": "msg.query = `from(bucket:\"Local_Filtre_Air\")\n|>range(start:-1h)\n|>filter(fn:(r) =>r._measurement==\"motion\"  and r._field == \"value\")\n|>group()`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 420,
+        "wires": [
+            [
+                "1b137ac3d0a8d8fd"
+            ]
+        ]
+    },
+    {
+        "id": "0e9ee42799e9b893",
+        "type": "function",
+        "z": "a42c20f09300ab12",
+        "name": "function 29",
+        "func": "\nlet tab = [];\n\nfor (var i = 0; i < msg.payload.length; i++) {\n    tab.push(msg.payload[i]._value);\n}\nmsg.payload = tab;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 810,
+        "y": 460,
+        "wires": [
+            [
+                "58a123551df4e7ea"
+            ]
+        ]
+    },
+    {
+        "id": "5f75656dd44a23d1",
+        "type": "function",
+        "z": "a42c20f09300ab12",
+        "name": "function 30",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    }
+]

@@ -4,9 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import android.widget.Button
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import com.google.android.material.button.MaterialButton
+import fr.unice.polytech.cdscp_android.R
 import fr.unice.polytech.cdscp_android.databinding.FragmentNotificationsBinding
 
 class NotificationsFragment : Fragment() {
@@ -22,15 +24,17 @@ class NotificationsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val notificationsViewModel =
-            ViewModelProvider(this).get(NotificationsViewModel::class.java)
-
         _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
-        val textView: TextView = binding.textNotifications
-        notificationsViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+        val buttonBreath : Button = binding.buttonBreath
+        val buttonPollen : Button = binding.buttonPollen
+        buttonBreath.setOnClickListener {
+            (buttonBreath as MaterialButton).iconTint = ContextCompat.getColorStateList(requireContext(), R.color.green)
+            (buttonPollen as MaterialButton).iconTint = ContextCompat.getColorStateList(requireContext(), R.color.white)
+        }
+        buttonPollen.setOnClickListener {
+            (buttonPollen as MaterialButton).iconTint  = ContextCompat.getColorStateList(requireContext(), R.color.green)
+            (buttonBreath as MaterialButton).iconTint  = ContextCompat.getColorStateList(requireContext(), R.color.white)
         }
         return root
     }
