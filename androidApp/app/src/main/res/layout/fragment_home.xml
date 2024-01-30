@@ -8,12 +8,21 @@
     tools:context=".ui.home.HomeFragment">
 
     <fragment
-        android:id="@+id/dataDisplaySingleValueFragment"
+        android:id="@+id/co2DataDisplaySingleValueFragment"
         android:name="fr.unice.polytech.cdscp_android.ui.home.DataDisplaySingleValueFragment"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toStartOf="@+id/textView4"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <fragment
+        android:id="@+id/pollenDataDisplaySingleValueFragment"
+        android:name="fr.unice.polytech.cdscp_android.ui.home.DataDisplaySingleValueFragment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView

@@ -7,8 +7,6 @@ import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -121,6 +119,27 @@ class HomeFragment : Fragment() {
         })
     }
 
+    private fun getPollen(textView:TextView) {
+        val retrofit = ApiClient.apiClient
+        val apiService = retrofit.create(ApiService::class.java)
+
+        val callPollen = apiService.getPollen()
+        callPollen.enqueue(object : Callback<String> {
+            override fun onResponse(call: Call<String>, response: Response<String>) {
+                if (response.isSuccessful) {
+                    val result = response.body()
+                    println(result)
+                    textView.text = result
+                }
+            }
+
+            override fun onFailure(call: Call<String>, t: Throwable) {
+                textView.text = "Error: ${t.message}"
+                System.err.println(t.message)
+            }
+        })
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -134,9 +153,14 @@ class HomeFragment : Fragment() {
 
         createNotificationChannel()
 
-        val dataDisplaySingleValueFragment = childFragmentManager.findFragmentById(R.id.dataDisplaySingleValueFragment) as DataDisplaySingleValueFragment
-        dataDisplaySingleValueFragment.setData("CO2 Level", "-- ppm", View.OnClickListener {
-            getCo2(dataDisplaySingleValueFragment.getTextView())
+        val co2DataDisplaySingleValueFragment = childFragmentManager.findFragmentById(R.id.co2DataDisplaySingleValueFragment) as DataDisplaySingleValueFragment
+        co2DataDisplaySingleValueFragment.setData("CO2 Level", "-- ppm", View.OnClickListener {
+            getCo2(co2DataDisplaySingleValueFragment.getTextView())
+        })
+
+        val pollenDataDisplaySingleValueFragment = childFragmentManager.findFragmentById(R.id.pollenDataDisplaySingleValueFragment) as DataDisplaySingleValueFragment
+        pollenDataDisplaySingleValueFragment.setData("Pollen Level", "--", View.OnClickListener {
+            getPollen(pollenDataDisplaySingleValueFragment.getTextView())
         })
 
         //handler = Handler(Looper.getMainLooper())

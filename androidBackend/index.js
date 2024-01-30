@@ -25,6 +25,12 @@ app.get("/getCO2", async (req, res) => {
     res.send(result);
 });
 
+app.get("/getPollen", async (req, res) => {
+    let result = await getFromNodeRed("/getPollen");
+    let highestRisk = result.highestPollenRisk;
+    res.send(highestRisk);
+});
+
 app.get("/getOpenState", async (req, res) => {
     let result = await getFromNodeRed("/getOpenState");
     res.send(result);
