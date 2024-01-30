@@ -46,6 +46,10 @@ class DataDisplaySingleValueFragment : Fragment() {
         return view
     }
 
+    fun getTextView(): TextView {
+        return dataTextView
+    }
+
     fun setData(title: String, data: String, actionListener: View.OnClickListener) {
         titleTextView.text = title
         dataTextView.text = data

@@ -35,7 +35,7 @@ class HomeFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
-    private lateinit var handler: Handler
+    //private lateinit var handler: Handler
     private lateinit var runnable: Runnable
 
     private val CHANNEL_ID = "CO2HighNotification"
@@ -54,30 +54,10 @@ class HomeFragment : Fragment() {
             val notificationManager: NotificationManager = requireContext().getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             notificationManager.createNotificationChannel(channel)
         }
-
-    }
-
-    private fun getDataFromApi(textView:TextView) {
-        val retrofit = ApiClient.apiClient
-        val apiService = retrofit.create(ApiService::class.java)
-
-        val call = apiService.getHelloWorld()
-        call.enqueue(object : Callback<String> {
-            override fun onResponse(call: Call<String>, response: Response<String>) {
-                if (response.isSuccessful) {
-                    val result = response.body()
-                    textView.text = result
-                }
-            }
-
-            override fun onFailure(call: Call<String>, t: Throwable) {
-                textView.text = "Error: ${t.message}"
-
-            }
-        })
     }
 
     private fun getCo2(textView:TextView) {
+        println("okayyyyy letsgo")
         val retrofit = ApiClient.apiClient
         val apiService = retrofit.create(ApiService::class.java)
 
@@ -97,7 +77,7 @@ class HomeFragment : Fragment() {
 
             override fun onFailure(call: Call<String>, t: Throwable) {
                 textView.text = "Error: ${t.message}"
-
+                System.err.println(t.message)
             }
         })
         val callOpenState = apiService.getOpenState()
@@ -139,7 +119,6 @@ class HomeFragment : Fragment() {
 
             }
         })
-
     }
 
     override fun onCreateView(
@@ -155,41 +134,14 @@ class HomeFragment : Fragment() {
 
         createNotificationChannel()
 
-        val textView: TextView = binding.textHelloWorld
-        val button: TextView = binding.button
-        button.setOnClickListener {
-            getDataFromApi(textView)
-        }
-        val dataDisplaySingleValueFragment = supportFragmentManager.findFragmentById(R.id.dataDisplaySingleValueFragment) as DataDisplaySingleValueFragment
-        val co2TextView: TextView = binding.co2TextView
-        val co2Button: TextView = binding.co2Button
-        co2Button.setOnClickListener {
-            getCo2(co2TextView)
-        }
+        val dataDisplaySingleValueFragment = childFragmentManager.findFragmentById(R.id.dataDisplaySingleValueFragment) as DataDisplaySingleValueFragment
+        dataDisplaySingleValueFragment.setData("CO2 Level", "-- ppm", View.OnClickListener {
+            getCo2(dataDisplaySingleValueFragment.getTextView())
+        })
 
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
-
-        handler = Handler(Looper.getMainLooper())
-        runnable = object : Runnable {
-            override fun run() {
-                getCo2(co2TextView)
-                handler.postDelayed(this, 300000)
-            }
-        }
+        //handler = Handler(Looper.getMainLooper())
 
         return root
-    }
-
-    override fun onResume() {
-        super.onResume()
-        handler.post(runnable)
-    }
-
-    override fun onPause() {
-        super.onPause()
-        handler.removeCallbacks(runnable)
     }
 
 

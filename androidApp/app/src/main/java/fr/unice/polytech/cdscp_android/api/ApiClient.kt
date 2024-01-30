@@ -4,7 +4,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.scalars.ScalarsConverterFactory
 
 object ApiClient {
-    private const val BASE_URL : String = "http://10.212.160.184:8080/"
+    private const val BASE_URL : String = "http://10.212.160.183:8080/"
     private var retrofit: Retrofit? = null
 
     val apiClient: Retrofit
